@@ -14,10 +14,9 @@ pipeline {
                 sh 'docker build -t poc7-app .'
             }
         }
-
         stage('Deploy using Ansible') {
             steps {
-                sh 'ansible-playbook ansible/deploy.yml'
+                sh 'ansible-playbook -i ansible/inventory ansible/deploy.yml'
             }
         }
     }
