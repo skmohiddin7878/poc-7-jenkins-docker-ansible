@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 
 app.get('/', (req, res) => {
-  res.send('POC-7 CI/CD with Jenkins, Docker & Ansible ');
+  res.send('POC-7 CI/CD with Jenkins, Docker & Ansible');
 });
 
 app.listen(3000, () => {
