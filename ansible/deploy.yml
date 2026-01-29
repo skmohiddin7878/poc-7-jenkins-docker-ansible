@@ -1,0 +1,13 @@
+- hosts: app
+  become: true
+  tasks:
+
+    - name: Stop old container
+      shell: docker stop poc7 || true
+
+    - name: Remove old container
+      shell: docker rm poc7 || true
+
+    - name: Run new container
+      shell: docker run -d -p 3000:3000 --name poc7 poc7-app
+
